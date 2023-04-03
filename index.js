@@ -1,23 +1,12 @@
 const express = require("express");
+const routerApi = require("./routes");
+
 const app = express();
-const port = 3000;
+const port = 3001;
+app.use(express.json())
 
-app.get("/", (req, res) => {
-    res.send("hola mi server en express")
-})
+routerApi(app);
 
-app.get("/productos", (req, res) => {
-    res.send("hola mi server en express")
-})
-
-app.get("/carrito", (req, res) => {
-    res.json({
-        producto: 1,
-        nose: "loco"
-    })
-})
-
-
-app.listen(port,()=>{
-    console.log(`Listening at http://localhost:${port}`)
-  })
+app.listen(port, () => {
+  console.log("http://localhost:" + port + "/api/v1");
+});
