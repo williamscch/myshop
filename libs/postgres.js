@@ -1,4 +1,4 @@
-import { Client } from "pg";
+const { Client } = require("pg");
 
 const dbConnect = async () => {
   const client = new Client({
@@ -12,4 +12,4 @@ const dbConnect = async () => {
   return client;
 };
 
-export default dbConnect;
+module.exports = dbConnect;
