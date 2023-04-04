@@ -1,4 +1,4 @@
-class CategoriesService {
+class CategoryService {
   constructor() {
     this.categories = [];
 
@@ -14,4 +14,4 @@ class CategoriesService {
   update() {}
   delete() {}
 }
-module.exports = CategoriesService;
+module.exports = CategoryService;
