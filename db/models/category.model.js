@@ -24,6 +24,8 @@ const CategorySchema = {
     field: "created_at",
     defaultValue: Sequelize.NOW,
   },
+  onUpdate: 'CASCADE',
+  onDelete: 'SET NULL'
 };
 
 class Category extends Model {

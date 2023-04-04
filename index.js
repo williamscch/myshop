@@ -30,5 +30,5 @@ app.use(errorHandler);
 app.use(ormErrorHandler)
 
 app.listen(port, () => {
-  console.log("Mi port" + port);
+  console.log("Running on http://localhost:" + port);
 });

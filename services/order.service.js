@@ -29,6 +29,9 @@ class OrderService {
         "items",
       ],
     });
+    if (!order) {
+      throw boom.notFound("Order not found");
+    }
     return order;
   }
 
