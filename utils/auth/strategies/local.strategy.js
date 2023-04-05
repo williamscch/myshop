@@ -1,14 +1,15 @@
-const { Strategy } = require("passport-local");
-const boom = require("@hapi/boom");
-const bcrypt = require("bcrypt");
+const { Strategy } = require('passport-local');
+const boom = require('@hapi/boom');
+const bcrypt = require('bcrypt');
 
-const UserService = require("./../../../services/user.service");
+const UserService = require('../../../services/user.service');
+
 const service = new UserService();
 
 const LocalStrategy = new Strategy(
   {
-    usernameField: "email",
-    passwordField: "password",
+    usernameField: 'email',
+    passwordField: 'password'
   },
   async (email, password, done) => {
     try {
@@ -22,7 +23,8 @@ const LocalStrategy = new Strategy(
       }
       delete user.dataValues.password;
       done(null, user);
-    } catch (error) {
+    }
+    catch (error) {
       done(error, false);
     }
   }

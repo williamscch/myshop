@@ -1,17 +1,15 @@
-"use strict";
-
-const { UserSchema, USER_TABLE } = require("../models/user.model");
+const { UserSchema, USER_TABLE } = require('../models/user.model');
 const {
   CustomerSchema,
-  CUSTOMER_TABLE,
-} = require("./../models/customer.model");
-const { CategorySchema, CATEGORY_TABLE } = require("../models/category.model");
-const { ProductSchema, PRODUCT_TABLE } = require("../models/product.model");
-const { OrderSchema, ORDER_TABLE } = require("./../models/order.model");
+  CUSTOMER_TABLE
+} = require('../models/customer.model');
+const { CategorySchema, CATEGORY_TABLE } = require('../models/category.model');
+const { ProductSchema, PRODUCT_TABLE } = require('../models/product.model');
+const { OrderSchema, ORDER_TABLE } = require('../models/order.model');
 const {
   ORDER_PRODUCT_TABLE,
-  OrderProductSchema,
-} = require("./../models/order-product.model");
+  OrderProductSchema
+} = require('../models/order-product.model');
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
@@ -31,5 +29,5 @@ module.exports = {
     await queryInterface.dropTable(PRODUCT_TABLE, ProductSchema);
     await queryInterface.dropTable(ORDER_TABLE);
     await queryInterface.dropTable(ORDER_PRODUCT_TABLE);
-  },
+  }
 };
