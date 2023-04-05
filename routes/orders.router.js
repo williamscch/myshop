@@ -2,6 +2,7 @@ const express = require("express");
 
 const OrderService = require("../services/order.service");
 const validatorHandler = require("../middlewares/validator.handler");
+const passport = require("passport");
 const {
   getOrderSchema,
   createOrderSchema,
@@ -27,14 +28,16 @@ router.get(
 
 router.post(
   "/",
-  validatorHandler(createOrderSchema, "body"),
+  passport.authenticate("jwt", { session: false }),
   async (req, res, next) => {
     try {
-      const body = req.body;
+      const body = {
+        userId: req.user.sub,
+      };
       const newOrder = await service.create(body);
       res.status(201).json(newOrder);
-    } catch (error) {
-      next(error);
+    } catch (err) {
+      next(err);
     }
   }
 );
