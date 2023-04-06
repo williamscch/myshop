@@ -14,10 +14,6 @@ const CategorySchema = {
     unique: true,
     allowNull: false
   },
-  image: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
   createdAt: {
     allowNull: false,
     type: DataTypes.DATE,

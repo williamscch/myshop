@@ -2,6 +2,7 @@ const express = require('express');
 
 const CustomerService = require('../services/customers.service');
 const validationHandler = require('../middlewares/validator.handler');
+// const { createUserSchema } = require('../schemas/customer.schema');
 const {
   createCustomerSchema,
   getCustomerSchema,
@@ -20,9 +21,20 @@ router.get('/', async (req, res, next) => {
   }
 });
 
+router.get('/:userId', async (req, res, next) => {
+  try {
+    const { userId } = req.params;
+    res.json(await service.findOneUser(userId));
+  }
+  catch (error) {
+    next(error);
+  }
+});
+
 router.post(
   '/',
   validationHandler(createCustomerSchema, 'body'),
+  // validationHandler(createUserSchema, 'body.*.user'),
   async (req, res, next) => {
     try {
       const { body } = req;
