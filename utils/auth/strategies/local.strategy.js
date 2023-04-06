@@ -15,11 +15,11 @@ const LocalStrategy = new Strategy(
     try {
       const user = await service.findByEmail(email);
       if (!user) {
-        done(boom.unauthorized(), false);
+        done(boom.unauthorized('This email is not registered'), false);
       }
       const isMatch = await bcrypt.compare(password, user.password);
       if (!isMatch) {
-        done(boom.unauthorized(), false);
+        done(boom.unauthorized('Wrong email and password combination'), false);
       }
       delete user.dataValues.password;
       done(null, user);

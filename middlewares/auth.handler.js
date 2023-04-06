@@ -8,7 +8,7 @@ function checkApiKey(req, res, next) {
     next();
   }
   else {
-    next(boom.unauthorized());
+    next(boom.unauthorized('You need an API_KEY to access this endpoint'));
   }
 }
 
@@ -18,7 +18,7 @@ function checkAdminRole(req, res, next) {
     next();
   }
   else {
-    next(boom.unauthorized('Only admins can manage categories'));
+    next(boom.unauthorized('Only admins are allowed to use this endpoint'));
   }
 }
 
