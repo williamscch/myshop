@@ -1,5 +1,4 @@
 const express = require('express');
-
 const passport = require('passport');
 const OrderService = require('../services/order.service');
 const validatorHandler = require('../middlewares/validator.handler');

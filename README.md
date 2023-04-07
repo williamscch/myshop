@@ -2,6 +2,10 @@
 
 MY SHOP is a Restful API that is functional for an online shop. Users can see products, filter them by category, price and name, as well as add products to the shopping cart and place orders. You can also log in as an admin, who can manage the web app, adding categories and products, as well as deleting and updating them, and managing users and customers.
 
+## Front-end Repository
+
+The front-end repository for this project can be found at: https://github.com/williamscch/myshop-client
+
 ## Built With
 
 - Node.js
@@ -64,27 +68,23 @@ Williams Colmenares
 - [LinkedIn](https://www.linkedin.com/in/williamscolmenaresch/)
 - [GitHub](https://github.com/williamscch)
 
-## Front-end Repository
-
-The front-end repository for this project can be found at: https://github.com/williamscch/myshop-client
-
 ## ERD Diagram
 
 > ![](./erd.png)
 
-## 🔭 Future Features <a name="future-features"></a>
+## 🔭 Future Features 
 
-> Describe 1 - 3 features you will add to the project.
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- [ ] **[Swagger Documentation]**
+- [ ] **[JWT Refresh]**
+- [ ] **[Pagination]**
+- [ ] **[Deployment]**
 
-## 🤝 Contributing <a name="contributing"></a>
+## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).
 
-## 📝 License <a name="license"></a>
+## 📝 License 
 
 This project is [MIT](./MIT.md) licensed.

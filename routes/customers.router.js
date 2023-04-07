@@ -1,5 +1,5 @@
 const express = require('express');
-
+const { checkApiKey } = require('../middlewares/auth.handler');
 const CustomerService = require('../services/customers.service');
 const validationHandler = require('../middlewares/validator.handler');
 // const { createUserSchema } = require('../schemas/customer.schema');
@@ -12,7 +12,7 @@ const {
 const router = express.Router();
 const service = new CustomerService();
 
-router.get('/', async (req, res, next) => {
+router.get('/', checkApiKey(), async (req, res, next) => {
   try {
     res.json(await service.find());
   }
@@ -34,7 +34,6 @@ router.get('/:userId', async (req, res, next) => {
 router.post(
   '/',
   validationHandler(createCustomerSchema, 'body'),
-  // validationHandler(createUserSchema, 'body.*.user'),
   async (req, res, next) => {
     try {
       const { body } = req;
