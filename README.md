@@ -41,7 +41,7 @@ To run this project locally, you will need:
 `npx sequelize-cli db:migrate`
 
 
-5. Use the seed file to populate the database:
+5. Use the seed file to populate the database: (currently can be done just once because we are not tracking the seeds migrations and some duplicated values will not be allowed, so take care)
 
 `npx sequelize-cli db:seed:all`
 

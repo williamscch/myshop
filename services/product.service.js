@@ -1,4 +1,6 @@
+/* eslint-disable camelcase */
 const boom = require('@hapi/boom');
+const { Op } = require('sequelize');
 
 const { models } = require('../libs/sequelize');
 
@@ -8,11 +10,33 @@ class ProductsService {
     return newProduct;
   }
 
-  async find() {
-    const response = await models.Product.findAll({
-      include: ['category']
-    });
-    return response;
+  async find(query) {
+    const filter = {
+      include: ['category'],
+      where: {}
+    };
+
+    const { categoryId } = query;
+    if (categoryId) {
+      filter.where.categoryId = categoryId;
+    }
+
+    const { name } = query;
+    if (name) {
+      filter.where.name = {
+        [Op.iLike]: `%${name}%`
+      };
+    }
+
+    const { price_min, price_max } = query;
+    if (price_min && price_max) {
+      filter.where.price = {
+        [Op.gte]: price_min,
+        [Op.lte]: price_max
+      };
+    }
+    const products = await models.Product.findAll(filter);
+    return products;
   }
 
   async findOne(id) {
