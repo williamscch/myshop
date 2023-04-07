@@ -12,7 +12,7 @@ const {
 const router = express.Router();
 const service = new CustomerService();
 
-router.get('/', checkApiKey(), async (req, res, next) => {
+router.get('/', checkApiKey, async (req, res, next) => {
   try {
     res.json(await service.find());
   }

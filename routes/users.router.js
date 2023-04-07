@@ -7,7 +7,7 @@ const { updateUserSchema, createUserSchema, getUserSchema } = require('../schema
 const router = express.Router();
 const service = new UserService();
 
-router.get('/', checkApiKey(), async (req, res, next) => {
+router.get('/', checkApiKey, async (req, res, next) => {
   try {
     const users = await service.find();
     res.json(users);
