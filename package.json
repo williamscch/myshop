@@ -14,7 +14,7 @@
     "seeds:generate": "sequelize-cli seed:generate --name ",
     "seeds:run": "sequelize-cli db:seed:all",
     "seeds:revert": "sequelize-cli db:seed:undo",
-    "seeds-delete": "sequelize-cli db:seed:undo:all"
+    "seeds:delete": "sequelize-cli db:seed:undo:all"
   },
   "keywords": [],
   "author": "",

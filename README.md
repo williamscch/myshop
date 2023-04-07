@@ -57,6 +57,12 @@ To run this project locally, you will need:
 
 The app will now be running on `http://localhost:3050`.
 
+8. IMPORTANT: There are 2 pre created users after you run the seeds:
+
+- Admin User: "admin@email.com" password:"admin1234" (You can not create more admin users from the client interface, so it is important to keep this one)
+
+- Customer User: "david@email.com" password: "user1234" (YOu can create more customers from the client interface, this is just for testing purposes)
+
 ## Usage
 
 The API endpoints are documented in the `API.md` file.

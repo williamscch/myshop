@@ -28,10 +28,9 @@ class ProductsService {
       };
     }
 
-    const { price_min, price_max } = query;
-    if (price_min && price_max) {
+    const { price_max } = query;
+    if (price_max) {
       filter.where.price = {
-        [Op.gte]: price_min,
         [Op.lte]: price_max
       };
     }
