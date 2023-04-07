@@ -1,0 +1,21 @@
+version: '3.3'
+
+services:
+  postgres:
+    image: postgres:14
+    environment:
+      - POSTGRES_DB=myshop
+      - POSTGRES_USER=williams
+      - POSTGRES_PASSWORD=1234
+    ports:
+      - 5433:5432
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=david@email.com
+      - PGADMIN_DEFAULT_PASSWORD=1234
+    ports:
+      - 5050:80
